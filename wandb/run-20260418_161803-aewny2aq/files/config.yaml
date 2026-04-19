@@ -1,0 +1,142 @@
+_wandb:
+    value:
+        cli_version: 0.26.0
+        e:
+            2iad0uoid5ninixoybbe6ptd06ql8pnc:
+                args:
+                    - --config
+                    - hyperparameter.yml
+                codePath: mamba/train.py
+                codePathLocal: train.py
+                cpu_count: 128
+                cpu_count_logical: 256
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "527295578112"
+                        used: "15094181888"
+                email: harshkumarsingh635@gmail.com
+                executable: /home/harsh/miniconda3/envs/prediction/bin/python
+                gpu: NVIDIA H200 NVL
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "150754820096"
+                      name: NVIDIA H200 NVL
+                      uuid: GPU-fd5877c5-f095-eaba-c5fc-2ab8ab845917
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "150754820096"
+                      name: NVIDIA H200 NVL
+                      uuid: GPU-8aea1e08-c4e1-8ca8-b4bc-151212758f75
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "150754820096"
+                      name: NVIDIA H200 NVL
+                      uuid: GPU-a41765b2-8379-8bdd-435b-8bf347466c99
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "150754820096"
+                      name: NVIDIA H200 NVL
+                      uuid: GPU-cdb65b9a-9255-48a6-ae22-671015a3b9b0
+                host: server
+                memory:
+                    total: "811206750208"
+                os: Linux-6.8.0-106-generic-x86_64-with-glibc2.39
+                program: /home/harsh/code/mamba/train.py
+                python: CPython 3.10.20
+                root: /home/harsh/code/mamba
+                startedAt: "2026-04-18T16:18:03.679646Z"
+                writerId: 2iad0uoid5ninixoybbe6ptd06ql8pnc
+        m: []
+        python_version: 3.10.20
+        t:
+            "1":
+                - 1
+            "2":
+                - 1
+            "3":
+                - 1
+                - 15
+                - 16
+                - 41
+            "4": 3.10.20
+            "5": 0.26.0
+            "12": 0.26.0
+            "13": linux-x86_64
+checkpoint:
+    value:
+        resume: false
+        save_dir: checkpoints
+        save_every: 5
+data:
+    value:
+        csv_path: /home/harsh/code/data/ord.csv
+        max_smiles_len: 200
+        min_token_freq: 2
+        num_workers: 8
+        test_split: 0.1
+        val_split: 0.1
+fusion:
+    value:
+        dropout: 0.1
+        ffn_dim: 512
+        hidden_size: 128
+        num_components: 4
+        num_heads: 8
+        num_layers: 3
+hardware:
+    value:
+        compile_model: true
+        cudnn_benchmark: true
+        device: auto
+        fp16: true
+        grad_checkpointing: true
+mamba:
+    value:
+        d_conv: 4
+        d_state: 16
+        dt_max: 0.1
+        dt_min: 0.001
+        dt_rank: auto
+        expand: 2
+        hidden_size: 128
+        mask_token_id: 1
+        num_layers: 8
+        pad_token_id: 0
+        vocab_size: 251
+training:
+    value:
+        accumulation_steps: 1
+        batch_size: 256
+        betas:
+            - 0.9
+            - 0.95
+        early_stop_patience: 15
+        epochs: 100
+        eps: 1e-08
+        grad_clip: 1
+        huber_delta: 10
+        label_smoothing: 0
+        log_every_n_steps: 10
+        loss: huber
+        lr: 0.0003
+        min_lr_ratio: 0.05
+        optimizer: adamw
+        scheduler: cosine
+        seed: 42
+        warmup_steps: 200
+        weight_decay: 0.0001
+wandb:
+    value:
+        entity: null
+        log_freq: 100
+        log_gradients: true
+        offline: false
+        project: reaction-yield-mamba
+        run_name: null
+        tags:
+            - mamba
+            - fusion-attention
+            - yield-prediction

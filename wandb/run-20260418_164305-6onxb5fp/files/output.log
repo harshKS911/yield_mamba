@@ -1,0 +1,43 @@
+/home/harsh/code/mamba/trainer.py:195: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(device_type="cuda", enabled=use_amp):
+Traceback (most recent call last):
+  File "/home/harsh/code/mamba/train.py", line 89, in <module>
+    main()
+  File "/home/harsh/code/mamba/train.py", line 85, in main
+    trainer.train()
+  File "/home/harsh/code/mamba/trainer.py", line 309, in train
+    train_m = self._train_epoch(epoch)
+  File "/home/harsh/code/mamba/trainer.py", line 214, in _train_epoch
+    loss    = self._train_step(batch)
+  File "/home/harsh/code/mamba/trainer.py", line 195, in _train_step
+    with autocast(device_type="cuda", enabled=use_amp):
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/site-packages/typing_extensions.py", line 2962, in __new__
+    return original_new(cls, *args, **kwargs)
+TypeError: autocast.__new__() got an unexpected keyword argument 'device_type'
+Traceback (most recent call last):
+  File "/home/harsh/code/mamba/train.py", line 89, in <module>
+    main()
+  File "/home/harsh/code/mamba/train.py", line 85, in main
+    trainer.train()
+  File "/home/harsh/code/mamba/trainer.py", line 309, in train
+    train_m = self._train_epoch(epoch)
+  File "/home/harsh/code/mamba/trainer.py", line 214, in _train_epoch
+    loss    = self._train_step(batch)
+  File "/home/harsh/code/mamba/trainer.py", line 195, in _train_step
+    with autocast(device_type="cuda", enabled=use_amp):
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/site-packages/typing_extensions.py", line 2962, in __new__
+    return original_new(cls, *args, **kwargs)
+TypeError: autocast.__new__() got an unexpected keyword argument 'device_type'
+Exception ignored in atexit callback: <function _MultiProcessingDataLoaderIter._clean_up_worker at 0x7de16cfc3910>
+Traceback (most recent call last):
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1703, in _clean_up_worker
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt:

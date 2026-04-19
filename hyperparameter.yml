@@ -1,0 +1,100 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# hyperparameters.yml
+# Central config for Reaction Yield Predictor (Mamba + Fusion Attention)
+# Edit any value here — no Python file needs to be touched.
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+# ── Data ──────────────────────────────────────────────────────────────────────
+data:
+  csv_path:        "/home/harsh/code/data/ord.csv"       # path to your ORD reaction CSV
+  val_split:       0.10             # fraction for validation
+  test_split:      0.10             # fraction for test
+  num_workers:     8                # DataLoader worker processes (0 = main process)
+  max_smiles_len:  200              # max SMILES token length (truncate beyond this)
+  min_token_freq:  2                # min frequency to keep a token in vocab
+
+
+# ── Mamba Encoder ─────────────────────────────────────────────────────────────
+mamba:
+  hidden_size:     128              # embedding dimension (must match fusion.hidden_size)
+  num_layers:      8                # total Mamba blocks (2 per Transformer-equiv layer)
+  d_state:         16               # SSM state dimension N
+  d_conv:          4                # depthwise conv kernel width
+  expand:          2                # inner dim = hidden_size × expand
+  dt_rank:         "auto"           # Δt rank; "auto" → hidden_size // 16
+  dt_min:          0.001            # minimum Δt value
+  dt_max:          0.1              # maximum Δt value
+  pad_token_id:    0                # [PAD] token id
+  mask_token_id:   1                # [MASK] token id
+
+
+# ── Fusion Attention ──────────────────────────────────────────────────────────
+fusion:
+  hidden_size:     128              # must equal mamba.hidden_size
+  num_heads:       8                # number of attention heads
+  num_layers:      3                # stacked fusion transformer layers
+  ffn_dim:         512              # feed-forward dim inside each fusion layer
+  dropout:         0.10             # dropout rate (attention + FFN)
+  num_components:  4                # number of reaction components (fixed: 4)
+
+
+# ── Training ──────────────────────────────────────────────────────────────────
+training:
+  epochs:          100              # max training epochs
+  batch_size:      256               # samples per GPU batch
+  seed:            42               # random seed for reproducibility
+
+  # Optimiser
+  optimizer:       "adamw"          # adamw | adam | sgd
+  lr:              0.0003           # peak learning rate
+  weight_decay:    0.0001           # L2 regularisation (applied to non-bias/norm)
+  betas:           [0.9, 0.95]      # Adam β1, β2
+  eps:             1.0e-8           # Adam epsilon
+
+  # LR Schedule
+  scheduler:       "cosine"         # cosine | linear | constant
+  warmup_steps:    200              # linear warmup steps
+  min_lr_ratio:    0.05             # min LR = lr × min_lr_ratio (cosine end)
+
+  # Regularisation
+  grad_clip:       1.0              # max gradient norm (0 = disabled)
+  label_smoothing: 0.0              # label smoothing for regression (usually 0)
+  loss:            "huber"          # huber | mse | mae
+  huber_delta:     10.0             # delta for Huber loss (yield units)
+
+  # Gradient accumulation
+  accumulation_steps: 1             # effective batch = batch_size × accumulation_steps
+
+  # Early stopping
+  early_stop_patience: 15           # stop if val MAE doesn't improve for N epochs
+
+  # Logging
+  log_every_n_steps: 10             # log metrics to WandB every N global steps
+
+
+# ── GPU / Precision ───────────────────────────────────────────────────────────
+hardware:
+  device:              "auto"       # auto | cuda | cpu | cuda:0 | cuda:1
+  fp16:                true         # automatic mixed precision (AMP)
+  grad_checkpointing:  true         # trade compute for GPU memory
+  compile_model:       false   # torch.compile (PyTorch >= 2.0 only)
+  cudnn_benchmark:     true         # faster convolutions (fixed input sizes)
+
+
+# ── Checkpointing ─────────────────────────────────────────────────────────────
+checkpoint:
+  save_dir:       "checkpoints"     # directory to save model weights
+  save_every:     5                 # save checkpoint every N epochs
+  resume:         false             # auto-resume from best checkpoint if found
+
+
+# ── WandB ─────────────────────────────────────────────────────────────────────
+wandb:
+  project:        "reaction-yield-mamba"
+  entity:         null              # your wandb username or team (null = default)
+  run_name:       null              # null = auto-generated name
+  tags:           ["mamba", "fusion-attention", "yield-prediction"]
+  log_gradients:  true              # watch model gradients in WandB
+  log_freq:       100               # gradient log frequency (steps)
+  offline:        false             # true = don't sync to cloud (useful for debug)

@@ -1,0 +1,61 @@
+{
+  "os": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.10.20",
+  "startedAt": "2026-04-18T16:25:10.058014Z",
+  "args": [
+    "--config",
+    "hyperparameter.yml"
+  ],
+  "program": "/home/harsh/code/mamba/train.py",
+  "codePath": "mamba/train.py",
+  "codePathLocal": "train.py",
+  "email": "harshkumarsingh635@gmail.com",
+  "root": "/home/harsh/code/mamba",
+  "host": "server",
+  "executable": "/home/harsh/miniconda3/envs/prediction/bin/python",
+  "cpu_count": 128,
+  "cpu_count_logical": 256,
+  "gpu": "NVIDIA H200 NVL",
+  "gpu_count": 4,
+  "disk": {
+    "/": {
+      "total": "527295578112",
+      "used": "15094218752"
+    }
+  },
+  "memory": {
+    "total": "811206750208"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA H200 NVL",
+      "memoryTotal": "150754820096",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-fd5877c5-f095-eaba-c5fc-2ab8ab845917"
+    },
+    {
+      "name": "NVIDIA H200 NVL",
+      "memoryTotal": "150754820096",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-8aea1e08-c4e1-8ca8-b4bc-151212758f75"
+    },
+    {
+      "name": "NVIDIA H200 NVL",
+      "memoryTotal": "150754820096",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-a41765b2-8379-8bdd-435b-8bf347466c99"
+    },
+    {
+      "name": "NVIDIA H200 NVL",
+      "memoryTotal": "150754820096",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-cdb65b9a-9255-48a6-ae22-671015a3b9b0"
+    }
+  ],
+  "cudaVersion": "13.0",
+  "writerId": "jss1dvx2pu3cy3go91h97fy8asgb8jp8"
+}

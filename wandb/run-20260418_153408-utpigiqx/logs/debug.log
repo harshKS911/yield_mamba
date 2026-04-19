@@ -1,0 +1,22 @@
+2026-04-18 15:34:08,103 INFO    MainThread:2870051 [wandb_setup.py:_flush():81] Current SDK version is 0.26.0
+2026-04-18 15:34:08,103 INFO    MainThread:2870051 [wandb_setup.py:_flush():81] Configure stats pid to 2870051
+2026-04-18 15:34:08,103 INFO    MainThread:2870051 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-04-18 15:34:08,103 INFO    MainThread:2870051 [wandb_init.py:setup_run_log_directory():721] Logging user logs to /home/harsh/code/mamba/wandb/run-20260418_153408-utpigiqx/logs/debug.log
+2026-04-18 15:34:08,103 INFO    MainThread:2870051 [wandb_init.py:setup_run_log_directory():722] Logging internal logs to /home/harsh/code/mamba/wandb/run-20260418_153408-utpigiqx/logs/debug-internal.log
+2026-04-18 15:34:08,103 INFO    MainThread:2870051 [wandb_init.py:init():848] calling init triggers
+2026-04-18 15:34:08,103 INFO    MainThread:2870051 [wandb_init.py:init():853] wandb.init called with sweep_config: {}
+config: {'mamba': {'vocab_size': 251, 'max_tokens': 128, 'hidden_size': 256, 'num_layers': 8, 'd_state': 16, 'd_conv': 4, 'expand': 2, 'dt_rank': 'auto', 'dt_min': 0.001, 'dt_max': 0.1, 'pad_token_id': 0, 'mask_token_id': 1}, 'fusion': {'hidden_size': 256, 'num_heads': 8, 'num_layers': 3, 'dropout': 0.1, 'ffn_dim': 512, 'num_components': 4}, 'train': {'data_csv': '/home/harsh/code/data/ord.csv', 'val_split': 0.1, 'test_split': 0.1, 'batch_size': 64, 'num_workers': 4, 'epochs': 100, 'lr': 0.0003, 'weight_decay': 0.0001, 'warmup_steps': 200, 'grad_clip': 1.0, 'label_smoothing': 0.0, 'device': 'cuda', 'fp16': True, 'grad_checkpointing': True, 'compile_model': False, 'accumulation_steps': 1, 'save_dir': 'checkpoints', 'save_every': 5, 'early_stop_patience': 15, 'wandb_project': 'reaction-yield-mamba', 'wandb_entity': None, 'wandb_run_name': None, 'wandb_tags': ['mamba', 'fusion', 'yield'], 'log_every': 10, 'seed': 42}, '_wandb': {}}
+2026-04-18 15:34:08,103 INFO    MainThread:2870051 [wandb_init.py:init():896] starting backend
+2026-04-18 15:34:08,340 INFO    MainThread:2870051 [wandb_init.py:init():911] sending inform_init request
+2026-04-18 15:34:08,345 INFO    MainThread:2870051 [wandb_init.py:init():919] backend started and connected
+2026-04-18 15:34:08,366 INFO    MainThread:2870051 [wandb_init.py:init():989] updated telemetry
+2026-04-18 15:34:08,367 INFO    MainThread:2870051 [wandb_init.py:init():1013] communicating run to backend with 90.0 second timeout
+2026-04-18 15:34:09,523 INFO    MainThread:2870051 [wandb_init.py:init():1058] starting run threads in backend
+2026-04-18 15:34:09,628 INFO    MainThread:2870051 [wandb_run.py:_console_start():2542] atexit reg
+2026-04-18 15:34:09,628 INFO    MainThread:2870051 [wandb_run.py:_redirect():2391] redirect: wrap_raw
+2026-04-18 15:34:09,628 INFO    MainThread:2870051 [wandb_run.py:_redirect():2460] Wrapping output streams.
+2026-04-18 15:34:09,628 INFO    MainThread:2870051 [wandb_run.py:_redirect():2483] Redirects installed.
+2026-04-18 15:34:09,631 INFO    MainThread:2870051 [wandb_init.py:init():1098] run started, returning control to user process
+2026-04-18 15:34:09,632 INFO    MainThread:2870051 [wandb_watch.py:_watch():69] Watching
+2026-04-18 15:34:46,476 INFO    wandb-AsyncioManager-main:2870051 [service_client.py:_forward_responses():134] Reached EOF.
+2026-04-18 15:34:46,476 INFO    wandb-AsyncioManager-main:2870051 [mailbox.py:close():155] Closing mailbox, abandoning 1 handles.

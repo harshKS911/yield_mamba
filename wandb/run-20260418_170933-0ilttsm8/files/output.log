@@ -1,0 +1,48 @@
+/home/harsh/code/mamba/trainer.py:194: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.use_amp):
+/home/harsh/miniconda3/envs/prediction/lib/python3.10/site-packages/torch/_inductor/compile_fx.py:322: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/harsh/code/mamba/train.py", line 89, in <module>
+    main()
+  File "/home/harsh/code/mamba/train.py", line 85, in main
+    trainer.train()
+  File "/home/harsh/code/mamba/trainer.py", line 314, in train
+    train_m = self._train_epoch(epoch)
+  File "/home/harsh/code/mamba/trainer.py", line 230, in _train_epoch
+    self.scaler.unscale_(self.optimizer)
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/site-packages/torch/amp/grad_scaler.py", line 358, in unscale_
+    optimizer_state["found_inf_per_device"] = self._unscale_grads_(
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/site-packages/torch/amp/grad_scaler.py", line 294, in _unscale_grads_
+    torch._amp_foreach_non_finite_check_and_unscale_(
+RuntimeError: Error: accessing tensor output of CUDAGraphs that has been overwritten by a subsequent run. Stack trace: File "/home/harsh/code/mamba/model.py", line 41, in forward
+    enc_out = self.encoder(batch)                       # per-component dicts
+  File "/home/harsh/code/mamba/mamba_encoder.py", line 307, in forward
+    results[name] = self.encode_component(
+  File "/home/harsh/code/mamba/mamba_encoder.py", line 296, in encode_component
+    out      = self.encoder(token_ids, attn_mask)
+  File "/home/harsh/code/mamba/mamba_encoder.py", line 257, in forward
+    x = self.token_embed(token_ids)                     # (B, T, hidden)
+Gradient addition node due to multiple use of tensor around:. To prevent overwriting, clone the tensor outside of torch.compile() or call torch.compiler.cudagraph_mark_step_begin() before each model invocation.
+Traceback (most recent call last):
+  File "/home/harsh/code/mamba/train.py", line 89, in <module>
+    main()
+  File "/home/harsh/code/mamba/train.py", line 85, in main
+    trainer.train()
+  File "/home/harsh/code/mamba/trainer.py", line 314, in train
+    train_m = self._train_epoch(epoch)
+  File "/home/harsh/code/mamba/trainer.py", line 230, in _train_epoch
+    self.scaler.unscale_(self.optimizer)
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/site-packages/torch/amp/grad_scaler.py", line 358, in unscale_
+    optimizer_state["found_inf_per_device"] = self._unscale_grads_(
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/site-packages/torch/amp/grad_scaler.py", line 294, in _unscale_grads_
+    torch._amp_foreach_non_finite_check_and_unscale_(
+RuntimeError: Error: accessing tensor output of CUDAGraphs that has been overwritten by a subsequent run. Stack trace: File "/home/harsh/code/mamba/model.py", line 41, in forward
+    enc_out = self.encoder(batch)                       # per-component dicts
+  File "/home/harsh/code/mamba/mamba_encoder.py", line 307, in forward
+    results[name] = self.encode_component(
+  File "/home/harsh/code/mamba/mamba_encoder.py", line 296, in encode_component
+    out      = self.encoder(token_ids, attn_mask)
+  File "/home/harsh/code/mamba/mamba_encoder.py", line 257, in forward
+    x = self.token_embed(token_ids)                     # (B, T, hidden)
+Gradient addition node due to multiple use of tensor around:. To prevent overwriting, clone the tensor outside of torch.compile() or call torch.compiler.cudagraph_mark_step_begin() before each model invocation.

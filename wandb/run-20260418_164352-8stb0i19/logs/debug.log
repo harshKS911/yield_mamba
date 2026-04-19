@@ -1,0 +1,22 @@
+2026-04-18 16:43:52,183 INFO    MainThread:2896988 [wandb_setup.py:_flush():81] Current SDK version is 0.26.0
+2026-04-18 16:43:52,183 INFO    MainThread:2896988 [wandb_setup.py:_flush():81] Configure stats pid to 2896988
+2026-04-18 16:43:52,183 INFO    MainThread:2896988 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-04-18 16:43:52,183 INFO    MainThread:2896988 [wandb_init.py:setup_run_log_directory():721] Logging user logs to /home/harsh/code/mamba/wandb/run-20260418_164352-8stb0i19/logs/debug.log
+2026-04-18 16:43:52,183 INFO    MainThread:2896988 [wandb_init.py:setup_run_log_directory():722] Logging internal logs to /home/harsh/code/mamba/wandb/run-20260418_164352-8stb0i19/logs/debug-internal.log
+2026-04-18 16:43:52,183 INFO    MainThread:2896988 [wandb_init.py:init():848] calling init triggers
+2026-04-18 16:43:52,183 INFO    MainThread:2896988 [wandb_init.py:init():853] wandb.init called with sweep_config: {}
+config: {'data': {'csv_path': '/home/harsh/code/data/ord.csv', 'val_split': 0.1, 'test_split': 0.1, 'num_workers': 8, 'max_smiles_len': 200, 'min_token_freq': 2}, 'mamba': {'hidden_size': 128, 'num_layers': 8, 'd_state': 16, 'd_conv': 4, 'expand': 2, 'dt_rank': 'auto', 'dt_min': 0.001, 'dt_max': 0.1, 'pad_token_id': 0, 'mask_token_id': 1, 'vocab_size': 251}, 'fusion': {'hidden_size': 128, 'num_heads': 8, 'num_layers': 3, 'ffn_dim': 512, 'dropout': 0.1, 'num_components': 4}, 'training': {'epochs': 100, 'batch_size': 256, 'seed': 42, 'optimizer': 'adamw', 'lr': 0.0003, 'weight_decay': 0.0001, 'betas': [0.9, 0.95], 'eps': 1e-08, 'scheduler': 'cosine', 'warmup_steps': 200, 'min_lr_ratio': 0.05, 'grad_clip': 1.0, 'label_smoothing': 0.0, 'loss': 'huber', 'huber_delta': 10.0, 'accumulation_steps': 1, 'early_stop_patience': 15, 'log_every_n_steps': 10}, 'hardware': {'device': 'auto', 'fp16': True, 'grad_checkpointing': True, 'compile_model': True, 'cudnn_benchmark': True}, 'checkpoint': {'save_dir': 'checkpoints', 'save_every': 5, 'resume': False}, 'wandb': {'project': 'reaction-yield-mamba', 'entity': None, 'run_name': None, 'tags': ['mamba', 'fusion-attention', 'yield-prediction'], 'log_gradients': True, 'log_freq': 100, 'offline': False}, '_wandb': {}}
+2026-04-18 16:43:52,183 INFO    MainThread:2896988 [wandb_init.py:init():896] starting backend
+2026-04-18 16:43:52,419 INFO    MainThread:2896988 [wandb_init.py:init():911] sending inform_init request
+2026-04-18 16:43:52,423 INFO    MainThread:2896988 [wandb_init.py:init():919] backend started and connected
+2026-04-18 16:43:52,425 INFO    MainThread:2896988 [wandb_init.py:init():989] updated telemetry
+2026-04-18 16:43:52,427 INFO    MainThread:2896988 [wandb_init.py:init():1013] communicating run to backend with 90.0 second timeout
+2026-04-18 16:43:53,723 INFO    MainThread:2896988 [wandb_init.py:init():1058] starting run threads in backend
+2026-04-18 16:43:53,837 INFO    MainThread:2896988 [wandb_run.py:_console_start():2542] atexit reg
+2026-04-18 16:43:53,837 INFO    MainThread:2896988 [wandb_run.py:_redirect():2391] redirect: wrap_raw
+2026-04-18 16:43:53,837 INFO    MainThread:2896988 [wandb_run.py:_redirect():2460] Wrapping output streams.
+2026-04-18 16:43:53,837 INFO    MainThread:2896988 [wandb_run.py:_redirect():2483] Redirects installed.
+2026-04-18 16:43:53,840 INFO    MainThread:2896988 [wandb_init.py:init():1098] run started, returning control to user process
+2026-04-18 16:43:53,840 INFO    MainThread:2896988 [wandb_watch.py:_watch():69] Watching
+2026-04-18 16:44:34,220 INFO    wandb-AsyncioManager-main:2896988 [service_client.py:_forward_responses():134] Reached EOF.
+2026-04-18 16:44:34,221 INFO    wandb-AsyncioManager-main:2896988 [mailbox.py:close():155] Closing mailbox, abandoning 1 handles.

@@ -1,0 +1,55 @@
+Epoch 001/100 | Train loss=197.8812 MAE=24.43 R²=0.057 | Val   loss=176.0273  MAE=22.22  R²=0.203 | 1946.6s
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 22.221
+Epoch 002/100 | Train loss=174.6246 MAE=22.03 R²=0.177 | Val   loss=170.7574  MAE=21.59  R²=0.171 | 1933.1s
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 21.588
+Epoch 003/100 | Train loss=165.1497 MAE=21.05 R²=0.236 | Val   loss=156.3046  MAE=20.14  R²=0.267 | 1937.6s
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 20.142
+Epoch 004/100 | Train loss=152.9172 MAE=19.77 R²=0.302 | Val   loss=148.1122  MAE=19.26  R²=0.302 | 1933.3s
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 19.263
+Epoch 005/100 | Train loss=147.7245 MAE=19.22 R²=0.329 | Val   loss=145.3559  MAE=19.00  R²=0.349 | 1932.2s
+  ✓ Checkpoint saved → checkpoints/model_epoch005.pt
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 18.997
+Epoch 006/100 | Train loss=144.6967 MAE=18.90 R²=0.345 | Val   loss=142.2827  MAE=18.63  R²=0.345 | 1930.2s
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 18.630
+Epoch 007/100 | Train loss=140.8697 MAE=18.48 R²=0.366 | Val   loss=142.0864  MAE=18.66  R²=0.371 | 1934.2s
+Epoch 008/100 | Train loss=138.5112 MAE=18.23 R²=0.378 | Val   loss=139.0517  MAE=18.31  R²=0.381 | 1934.2s
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 18.311
+Epoch 009/100 | Train loss=136.0514 MAE=17.97 R²=0.391 | Val   loss=136.8001  MAE=18.07  R²=0.396 | 1930.7s
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 18.066
+Epoch 010/100 | Train loss=134.1750 MAE=17.77 R²=0.401 | Val   loss=135.4216  MAE=17.87  R²=0.395 | 1933.2s
+  ✓ Checkpoint saved → checkpoints/model_epoch010.pt
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 17.873
+Epoch 011/100 | Train loss=132.4546 MAE=17.58 R²=0.408 | Val   loss=134.6790  MAE=17.81  R²=0.391 | 1930.8s
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 17.805
+Epoch 012/100 | Train loss=130.4364 MAE=17.37 R²=0.419 | Val   loss=134.5632  MAE=17.77  R²=0.385 | 1934.3s
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 17.766
+Epoch 013/100 | Train loss=127.8848 MAE=17.09 R²=0.432 | Val   loss=134.5883  MAE=17.77  R²=0.402 | 1932.4s
+Epoch 014/100 | Train loss=126.7114 MAE=16.96 R²=0.437 | Val   loss=133.2484  MAE=17.62  R²=0.396 | 1934.4s
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 17.622
+Epoch 015/100 | Train loss=124.4416 MAE=16.71 R²=0.449 | Val   loss=134.6794  MAE=17.73  R²=0.364 | 1931.0s
+  ✓ Checkpoint saved → checkpoints/model_epoch015.pt
+Epoch 016/100 | Train loss=122.7664 MAE=16.53 R²=0.457 | Val   loss=131.7809  MAE=17.51  R²=0.410 | 1934.6s
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 17.505
+Epoch 017/100 | Train loss=119.9982 MAE=16.23 R²=0.473 | Val   loss=134.0750  MAE=17.69  R²=0.379 | 1933.7s
+Epoch 018/100 | Train loss=117.7996 MAE=16.00 R²=0.483 | Val   loss=133.2202  MAE=17.59  R²=0.392 | 1934.3s
+Epoch 019/100 | Train loss=116.1385 MAE=15.82 R²=0.492 | Val   loss=135.6695  MAE=17.91  R²=0.388 | 1933.4s
+Epoch 020/100 | Train loss=113.7113 MAE=15.55 R²=0.504 | Val   loss=131.8336  MAE=17.47  R²=0.404 | 1936.3s
+  ✓ Checkpoint saved → checkpoints/model_epoch020.pt
+  ✓ Checkpoint saved → checkpoints/model_best.pt
+  ★ New best val MAE = 17.467
+Epoch 021/100 | Train loss=112.0469 MAE=15.38 R²=0.514 | Val   loss=135.2024  MAE=17.79  R²=0.366 | 1945.9s
+Epoch 022/100 | Train loss=109.8757 MAE=15.13 R²=0.524 | Val   loss=134.2152  MAE=17.64  R²=0.355 | 1934.7s
+Epoch 023/100 | Train loss=107.8215 MAE=14.91 R²=0.535 | Val   loss=133.2223  MAE=17.57  R²=0.359 | 1935.5s

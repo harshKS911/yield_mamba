@@ -1,0 +1,30 @@
+/home/harsh/code/mamba/trainer.py:195: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(device_type="cuda", enabled=use_amp):
+Traceback (most recent call last):
+  File "/home/harsh/code/mamba/train.py", line 89, in <module>
+    main()
+  File "/home/harsh/code/mamba/train.py", line 85, in main
+    trainer.train()
+  File "/home/harsh/code/mamba/trainer.py", line 309, in train
+    train_m = self._train_epoch(epoch)
+  File "/home/harsh/code/mamba/trainer.py", line 214, in _train_epoch
+    loss    = self._train_step(batch)
+  File "/home/harsh/code/mamba/trainer.py", line 195, in _train_step
+    with autocast(device_type="cuda", enabled=use_amp):
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/site-packages/typing_extensions.py", line 2962, in __new__
+    return original_new(cls, *args, **kwargs)
+TypeError: autocast.__new__() got an unexpected keyword argument 'device_type'
+Traceback (most recent call last):
+  File "/home/harsh/code/mamba/train.py", line 89, in <module>
+    main()
+  File "/home/harsh/code/mamba/train.py", line 85, in main
+    trainer.train()
+  File "/home/harsh/code/mamba/trainer.py", line 309, in train
+    train_m = self._train_epoch(epoch)
+  File "/home/harsh/code/mamba/trainer.py", line 214, in _train_epoch
+    loss    = self._train_step(batch)
+  File "/home/harsh/code/mamba/trainer.py", line 195, in _train_step
+    with autocast(device_type="cuda", enabled=use_amp):
+  File "/home/harsh/miniconda3/envs/prediction/lib/python3.10/site-packages/typing_extensions.py", line 2962, in __new__
+    return original_new(cls, *args, **kwargs)
+TypeError: autocast.__new__() got an unexpected keyword argument 'device_type'
